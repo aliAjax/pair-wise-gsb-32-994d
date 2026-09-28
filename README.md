@@ -13,11 +13,12 @@ TripWeaver 是一款纯前端旅行规划应用，支持创建旅行、探索景
 
 ## 主要功能
 
-- 我的旅行：创建、筛选、删除旅行计划。
-- 行程详情：查看每日行程、预算图表和共享时间线。
+- 我的旅行：创建、筛选、删除旅行计划，卡片上展示每名同行人的出行资格核对状态。
+- 行程详情：查看每日行程、预算图表、共享时间线，并完成出行资格核对。
+- 出行资格核对：每名同行人登记护照到期日与本次允许停留天数；行程结束日晚于护照到期日或计划停留天数超过许可时，点出具体人员与缺口并挡住“确认出行”；日期或同行人改动后自动重新核对，未通过的草稿仍可保存。
 - 景点探索：按 SpotCategory 搜索和筛选，收藏并加入行程。
 - 行程编排：SortableJS 拖拽排序，实时影响预算计算。
-- 分享预览：生成可复制的行程文本。
+- 分享预览：生成可复制的行程文本，预览中展示核对后的同行人名单与结论。
 
 ## 技术栈
 
@@ -37,13 +38,13 @@ TripWeaver 是一款纯前端旅行规划应用，支持创建旅行、探索景
 src/
 ├── api/
 ├── stores/
-├── models/
+├── models/           # trip.ts, spot.ts, dayPlan.ts, traveler.ts
 ├── types/
-├── components/common/
+├── components/common/# TripCard, EligibilityPanel, SpotCard, DayTimeline 等
 ├── hooks/
 ├── pages/
 ├── router/
-├── utils/
+├── utils/            # storage.ts, budgetCalculator.ts, eligibility.ts, formatters.ts, validators.ts
 ├── config/
 └── constants/
 ```
