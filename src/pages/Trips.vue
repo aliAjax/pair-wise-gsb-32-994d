@@ -9,6 +9,7 @@
       </el-select>
     </div>
     <EmptyState v-if="!tripStore.filteredTrips.length" title="还没有旅行计划" :description="messages.emptyTrips" />
+    <p v-else class="muted">卡片显示每名同行人的出行资格核对结果；有缺口时进入详情登记护照到期日与允许停留天数。</p>
     <section class="grid">
       <TripCard v-for="trip in tripStore.filteredTrips" :key="trip.id" :trip="trip" @open="open" @remove="tripStore.removeTrip" />
     </section>
